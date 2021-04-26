@@ -1,0 +1,52 @@
+.hero {
+    overflow: hidden;
+    min-height: 400px;
+    position: relative;
+    background: rgba(32, 22, 0, 0.5);
+    background: -moz-linear-gradient(top, rgba(32, 22, 0, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(32, 22, 0, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(32, 22, 0, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.hero > .poster {
+    z-index: -1;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    max-width: 1320px;
+    position: absolute;
+    top: -160px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.hero > section {
+    z-index: 1;
+    color: #fff
+}
+
+.intro {
+    position: relative;
+}
+
+.intro .contact-btn {
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: 600;
+    color: #6a6a6a;
+}
+
+.intro .contact-btn > span {
+    display: block;
+    background: #4caf50;
+    color: #fff;
+    border-radius: 4px;
+    padding: 2px 15px;
+    margin-top: 3px;
+}
