@@ -8,6 +8,29 @@ class IndexController extends Controller
 {
     public function renderHome()
     {
-        return view('home');
+        $data = [];
+        $data['features'] = \App\Models\Defines::getFeatures();
+
+        return view('home', $data);
+    }
+
+    public function renderAbout()
+    {
+        $data = [];
+        $data['features'] = \App\Models\Defines::getFeatures();
+
+        return view('about', $data);
+    }
+    
+    public function renderRemontAkpp()
+    {
+        $data = [];
+
+        return view('remontAkpp', $data);
+    }
+
+    public function renderPrices() 
+    {
+        return view('prices');
     }
 }

@@ -1,3 +1,12 @@
+nav .nav-link:hover,
+nav .nav-item.active .nav-link {
+    color: var(--bs-blue);
+}
+
+nav .nav-item .nav-link {
+    font-weight: 500;
+}
+
 .hero {
     overflow: hidden;
     min-height: 400px;
@@ -49,4 +58,39 @@
     border-radius: 4px;
     padding: 2px 15px;
     margin-top: 3px;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.nav-prices {
+    align-items: stretch;
+}
+
+.nav-prices .nav-link.active {
+    background: #212529;
+    border: 2px solid #212529;
+}
+
+.nav-prices .nav-link {
+    width: 100%;
+    border: 2px solid transparent;
+    height: 100%;
+    border-radius: 0;
+    border-bottom: 0 !important
+}
+
+
+.nav-prices .nav-item {
+    flex-grow: 1;
+}
+
+.prices-tables th {
+    white-space: nowrap;
+}
+
+.prices-tables th,
+.prices-tables td {
+    width: 25%;
 }

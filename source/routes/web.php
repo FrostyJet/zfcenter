@@ -16,3 +16,6 @@ use App\Http\Controllers\IndexController;
 */
 
 Route::get('/', [IndexController::class, 'renderHome']);
+Route::get('/about', [IndexController::class, 'renderAbout'])->name('index.about');
+Route::get('/remont-akpp', [IndexController::class, 'renderPrices'])->name('index.remontAkpp');
+Route::get('/prices', [IndexController::class, 'renderPrices'])->name('index.prices');

@@ -17,16 +17,7 @@
     </div>
 
     <div class="bg-light py-5">
-        <?php
-        $brands = [
-            ['image' => 'http://zfcenter.ru/sites/default/files/photo_0.jpg', 'title' => 'Ремонт АКПП', 'subtitle' => 'Mercedes'],
-            ['image' => 'http://zfcenter.ru/sites/default/files/logo_audi_0.png', 'title' => 'Ремонт АКПП', 'subtitle' => 'Audi'],
-            ['image' => 'http://zfcenter.ru/sites/default/files/logo_jaguar.png', 'title' => 'Ремонт АКПП', 'subtitle' => 'Jaguar'],
-            ['image' => 'http://zfcenter.ru/sites/default/files/logo_rover.png', 'title' => 'Ремонт АКПП', 'subtitle' => 'Land Rover'],
-            ['image' => 'http://zfcenter.ru/sites/default/files/logo_bmw.png', 'title' => 'Ремонт АКПП', 'subtitle' => 'BMW'],
-            ['image' => 'http://zfcenter.ru/sites/default/files/logo_other.png', 'title' => 'Ремонт АКПП', 'subtitle' => 'на других авто'],
-        ];
-        ?>
+        <?php $brands = \App\Models\Defines::getBrands(); ?>
         <section class="text-center container">
             <div class="row">
                 @foreach($brands as $b)
@@ -90,22 +81,6 @@
             <h2 class="pb-2 display-6">
                 Компания "ZFcenter" это:
             </h2>
-
-            <?php
-            $features = [
-                'БЕСПЛАТНАЯ диагностика АКПП,',
-                'БЕСПЛАТНЫЙ эвакуатор по Москве,',
-                'свыше 150 сервисов-партнёров в Москве и регионах,',
-                'гарантия на ремонт без ограничений по пробегу от 6 месяцев до 3х лет,',
-                'фиксированные цены на ремонт АКПП,',
-                'срок ремонта АКПП 1-3 дня,',
-                'любые запчасти для АКПП на складе в наличие,',
-                'развитие партнерских программ и акций,',
-                'спонсорская поддержка партнеров,',
-                'обучение или курсы повышения квалификации механиков,',
-                'проведение независимых экспертиз',
-            ]
-            ?>
 
             <ol class="list-group list-group-numbered">
                 @foreach($features as $f)
