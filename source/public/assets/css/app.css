@@ -69,16 +69,14 @@ nav .nav-item .nav-link {
 }
 
 .nav-prices .nav-link.active {
-    background: #212529;
-    border: 2px solid #212529;
+    background: #f2f2f2;
 }
 
 .nav-prices .nav-link {
     width: 100%;
-    border: 2px solid transparent;
     height: 100%;
     border-radius: 0;
-    border-bottom: 0 !important
+    border-bottom: 0 !important;
 }
 
 
@@ -90,7 +88,15 @@ nav .nav-item .nav-link {
     white-space: nowrap;
 }
 
-.prices-tables th,
+.prices-tables th {
+    width: 25%;
+    text-align: center;
+}
+
 .prices-tables td {
     width: 25%;
+    font-size: 13px;
+    text-align: center;
+    padding: 10px 9px;
+    background: #fff;
 }

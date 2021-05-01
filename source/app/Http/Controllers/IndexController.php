@@ -21,7 +21,7 @@ class IndexController extends Controller
 
         return view('about', $data);
     }
-    
+
     public function renderRemontAkpp()
     {
         $data = [];
@@ -29,7 +29,14 @@ class IndexController extends Controller
         return view('remontAkpp', $data);
     }
 
-    public function renderPrices() 
+    public function renderZapchastiAkpp()
+    {
+        $data = [];
+
+        return view('zapchastiAkpp', $data);
+    }
+
+    public function renderPrices()
     {
         return view('prices');
     }

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="py-5">
-        <h1 class="text-center fs-3 mb-5"> 
+        <h1 class="text-center fs-3 mb-5">
             <i class="fas fa-tools bi text-muted"></i>
             РЕМОНТ АКПП
         </h1>
