@@ -29,6 +29,25 @@ class IndexController extends Controller
         return view('remontAkpp', $data);
     }
 
+    public function renderRemontBrand($brand)
+    {
+        $brands = \App\Models\Defines::getBrands();
+        $series = \App\Models\Defines::getSeries()[$brand] ?? NULL;
+
+        $data = [
+            'brand'=> $brand,
+            'brands'=> $brands,
+        ];
+
+        if(!isset($series)) {
+            abort(404);
+        }
+
+        $data['series'] = $series;
+
+        return view('remontBrand', $data);
+    }
+
     public function renderZapchastiAkpp()
     {
         $data = [];
@@ -39,5 +58,10 @@ class IndexController extends Controller
     public function renderPrices()
     {
         return view('prices');
+    }
+
+    public function renderContacts()
+    {
+        return view('contacts');
     }
 }

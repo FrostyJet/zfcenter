@@ -351,4 +351,37 @@ class Defines
     {
         return '+7(495)664-41-00';
     }
+
+    public static function getSeries() 
+    {
+        $series = [
+            'mercedes' => [
+                
+            ],
+            'audi' => [],
+            'jaguar' => [],
+            'land_rover' => [
+                'land_rover' => [
+                    'title' => 'Land Rover',
+                    'models' => [
+                        'discovery_3' => 'Land Rover Discovery 3',
+                        'discovery_4' => 'Land Rover Discovery 4',
+                        'freelander' => 'Land Rover Freelander',
+                    ]
+                ],
+                'range_rover' => [
+                    'title' => 'Range Rover',
+                    'models' => [
+                        'classic_vogue' => 'Range Rover Classic (Vogue)',
+                        'sport' => 'Range Rover Sport',
+                        'evoque' => 'Range Rover Evoque',
+                    ]
+                ]
+            ],
+            'bmw' => [],
+            'other' => [],
+        ];
+
+        return $series;
+    }
 }

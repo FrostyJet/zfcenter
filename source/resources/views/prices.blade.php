@@ -9,7 +9,7 @@
     @endphp
 
     <div class="container py-5">
-        <ul class="nav justify-content-between nav-pills nav-prices" id="pills-tab" role="tablist">
+        <ul class="nav justify-content-between nav-pills nav-prices mb-3" id="pills-tab" role="tablist">
             @foreach($brands as $brandKey => $brand)
                 <li class="nav-item" role="presentation">
                     <button class="nav-link {{$loop->first ? 'active' : ''}}" id="pills-{{$brandKey}}-tab"

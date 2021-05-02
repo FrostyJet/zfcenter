@@ -7,8 +7,7 @@
         'index.prices' => ['title' => 'ЦЕНЫ', 'url' => route('index.prices')],
         'index.zapchastiAkpp' => ['title' => 'ЗАПЧАСТИ АКПП', 'url' => route('index.zapchastiAkpp')],
         'index.#5' => ['title' => 'НАШИ РАБОТЫ', 'url' => '/'],
-        'index.#6' => ['title' => 'ПАРТНЁРЫ', 'url' => '/'],
-        'index.#7' => ['title' => 'КОНТАКТЫ', 'url' => '/']
+        'index.contacts' => ['title' => 'КОНТАКТЫ', 'url' => route('index.contacts')]
     ]
     ?>
 

@@ -64,6 +64,10 @@ nav .nav-item .nav-link {
     text-decoration: none;
 }
 
+.list-style-none {
+    list-style-type: none;
+}
+
 .nav-prices {
     align-items: stretch;
 }
@@ -75,10 +79,8 @@ nav .nav-item .nav-link {
 .nav-prices .nav-link {
     width: 100%;
     height: 100%;
-    border-radius: 0;
     border-bottom: 0 !important;
 }
-
 
 .nav-prices .nav-item {
     flex-grow: 1;
@@ -99,4 +101,10 @@ nav .nav-item .nav-link {
     text-align: center;
     padding: 10px 9px;
     background: #fff;
+}
+
+
+.remont .list-group-item:hover {
+    cursor: pointer;
+    background-color: #f8f9fa;
 }
