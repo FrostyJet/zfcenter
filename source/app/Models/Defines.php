@@ -347,19 +347,50 @@ class Defines
         return $prices;
     }
 
-    public static function getCompanyPhone() 
+    public static function getCompanyPhone()
     {
         return '+7(495)664-41-00';
     }
 
-    public static function getSeries() 
+    public static function getSeries()
     {
         $series = [
             'mercedes' => [
-                
+
             ],
             'audi' => [],
-            'jaguar' => [],
+            'jaguar' => [
+                'x_type' => [
+                    'title' => 'X-Type',
+                    'models' => [
+                        'x_type' => 'X-Type',
+                    ]
+                ],
+                's_type' => [
+                    'title' => 'S-Type',
+                    'models' => [
+                        's_type' => 'S-Type',
+                    ]
+                ],
+                'xf' => [
+                    'title' => 'XF',
+                    'models' => [
+                        'xf' => 'XF',
+                    ]
+                ],
+                'xk' => [
+                    'title' => 'XK',
+                    'models' => [
+                        'xk' => 'XK',
+                    ]
+                ],
+                'xj' => [
+                    'title' => 'XJ',
+                    'models' => [
+                        'xj' => 'XJ',
+                    ]
+                ],
+            ],
             'land_rover' => [
                 'land_rover' => [
                     'title' => 'Land Rover',
