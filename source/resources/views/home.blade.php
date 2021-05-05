@@ -13,7 +13,7 @@
             </div>
         </section>
 
-        <img src="http://zfcenter.ru/sites/all/themes/cleanlight/images/main_page_back.jpg" alt="" class="poster">
+        <img src="/img/i/main_page_back.jpg" alt="" class="poster">
     </div>
 
     <div class="bg-light py-5">
@@ -22,10 +22,10 @@
             <div class="row">
                 @foreach($brands as $b)
                     <div class="col-6 col-lg-4">
-                        <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        <img class="bd-placeholder-img" width="140" height="140"
                              src="{{$b['image']}}" alt="">
 
-                        <h2>{{$b['subtitle']}}</h2>
+                        <h2 class="text-truncate">{{$b['subtitle']}}</h2>
                         <p>{{$b['title']}}</p>
                     </div><!-- /.col-lg-4 -->
                 @endforeach

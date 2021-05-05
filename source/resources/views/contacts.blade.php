@@ -23,7 +23,7 @@
             </p>
 
             <p class="lead">
-                <b>E-mail:</b> info@zfcenter.ru
+                <b>E-mail:</b> info@zfcenter.am
             </p>
 
             <p class="lead">

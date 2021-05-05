@@ -5,7 +5,7 @@
         <h1 class="fw-bold text-center">ЗАПЧАСТИ АКПП</h1>
         <div class="text-center">
             <div class="container-fluid px-5">
-                <img src="http://zfcenter.ru/sites/all/themes/cleanlight/images/zapchasti.png"
+                <img src="/img/i/zapchasti.png"
                      class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="1300" height="500"
                      loading="lazy">
             </div>

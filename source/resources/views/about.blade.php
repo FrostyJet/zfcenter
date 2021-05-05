@@ -10,7 +10,7 @@
   </div>
   <div class="text-center" style="max-height: 30vh;">
     <div class="container-fluid px-5">
-      <img src="http://zfcenter.ru/sites/all/themes/cleanlight/images/about.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="1300" height="500" loading="lazy">
+      <img src="/img/i/about.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="1300" height="500" loading="lazy">
     </div>
   </div>
 
