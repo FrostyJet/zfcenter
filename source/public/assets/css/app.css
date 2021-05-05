@@ -116,6 +116,17 @@ nav .nav-item .nav-link {
     object-fit: contain;
 }
 
+.remont-akpp .card-item {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.remont-akpp .card-item:hover {
+    border-color: #2d3748;
+    transition: 150ms ease;
+    background-color: #f8f9fa;
+}
 
 @media all and (min-width: 992px) {
     .hero {

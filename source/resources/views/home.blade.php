@@ -19,9 +19,9 @@
     <div class="bg-light py-5">
         <?php $brands = \App\Models\Defines::getBrands(); ?>
         <section class="text-center container">
-            <div class="row">
+            <div class="row remont-akpp">
                 @foreach($brands as $b)
-                    <div class="col-6 col-lg-4">
+                    <div class="col-6 col-lg-4 card-item">
                         <img class="bd-placeholder-img" width="140" height="140"
                              src="{{$b['image']}}" alt="">
 

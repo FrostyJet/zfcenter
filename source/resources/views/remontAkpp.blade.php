@@ -7,10 +7,10 @@
         РЕМОНТ АКПП
     </h1>
     <?php $brands = \App\Models\Defines::getBrands(); ?>
-    <section class="text-center container">
+    <section class="text-center container remont-akpp">
         <div class="row justify-content-around">
             @foreach($brands as $brandKey => $b)
-            <a href="{{ route('index.remontBrand', ['brand' => $brandKey]) }}" class="col-5 col-lg-4 no-decoration">
+            <a href="{{ route('index.remontBrand', ['brand' => $brandKey]) }}" class="col-5 col-lg-4 card-item no-decoration">
                 <img class="bd-placeholder-img img-fluid" width="140" height="140" src="{{$b['image']}}" alt="">
 
                 <h2 class="text-dark no-decoration text-truncate">{{$b['subtitle']}}</h2>
