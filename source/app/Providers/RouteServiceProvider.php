@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/zf-admin';
+    public const HOME = '/zf-admin/posts';
 
     /**
      * The controller namespace for the application.

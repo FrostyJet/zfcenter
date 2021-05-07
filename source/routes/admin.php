@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\AdminController; 
+use App\Http\Controllers\AdminPostsController; 
+use App\Http\Controllers\AdminMediaController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,17 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', [AdminController::class, 'renderHome']);
+# Posts
+# --------------------------------------------------------------------------
+Route::get('/posts', [AdminPostsController::class, 'index'])->name('admin.posts.index');
+Route::get('/posts/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');
+Route::post('/posts/create', [AdminPostsController::class, 'store'])->name('admin.posts.store');
+Route::get('/posts/edit/{id}', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');
+Route::post('/posts/edit/{id}', [AdminPostsController::class, 'update'])->name('admin.posts.update');
+Route::get('/posts/delete/{id}', [AdminPostsController::class, 'delete'])->name('admin.posts.delete');
+# --------------------------------------------------------------------------
+
+# Media
+# --------------------------------------------------------------------------
+Route::get('/media/delete/{id}', [AdminMediaController::class, 'delete'])->name('admin.media.delete');
+# --------------------------------------------------------------------------

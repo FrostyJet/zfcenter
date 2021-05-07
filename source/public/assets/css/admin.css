@@ -1,0 +1,66 @@
+.sidebar .logo {
+    max-height: 60px;
+}
+
+.sidebar .side-icon {
+    font-size: 1.3rem;
+    display: inline-block;
+    width: 25px;
+}
+
+.sidebar .nav-item {
+    border-radius: 0.25rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .nav-item.active,
+.sidebar .nav-item:hover {
+    background-color: #343a40;
+    transition: background-color 95ms ease;
+}
+
+.sidebar .nav-link {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.media-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.media-list .media-item {
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border: 1px solid #212529;
+    border-radius: 4px;
+    position: relative;
+    padding: 5px;
+}
+
+.media-list .media-item a {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    margin: auto;
+    z-index: 2;
+    background: #dc3545;
+    color: #fff;
+    text-decoration: none;
+    padding: 4px 11px;
+    border-radius: 4px 0 4px 0;
+}
+
+.page {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.pagination {}
