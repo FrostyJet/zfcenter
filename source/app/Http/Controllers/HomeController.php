@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = [];
+        $data['features'] = \App\Models\Defines::getFeatures();
+
+        return view('home', $data);
     }
 }

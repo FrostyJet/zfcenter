@@ -40,12 +40,10 @@ services:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_USER: ${DB_USERNAME} 
       MYSQL_PASSWORD: ${DB_PASSWORD} 
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_ROOT_HOST: "0.0.0.0"
+      MYSQL_ROOT_PASSWORD: "secret"
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - ./compose/mysql/my.cnf:/etc/mysql/my.cnf
       - dbdata:/var/lib/mysql/
     networks:
       - laravel
@@ -63,7 +61,7 @@ services:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
     environment:
-      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: "secret"
       PMA_HOST: mysql
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
