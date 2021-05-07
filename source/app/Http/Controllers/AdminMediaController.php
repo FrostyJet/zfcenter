@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use \App\Models\Media;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class AdminMediaController extends Controller
 {
@@ -16,47 +17,50 @@ class AdminMediaController extends Controller
         return redirect()->back();
     }
 
-    public function uploadStart(Request $request)
+    public function upload(Request $request)
     {
-        $ext = '.jpg';
-        $ext = '.mp4';
+        $isDone = @$_REQUEST['isDone'] == 'true';
+        $filename = @$_REQUEST['filename'];
+        $type = @$_REQUEST['type'];
+        $postId = intval(@$_REQUEST['postId']);
 
-        
-        #$file = $request->file('file');
-        #$file->storeAs('public/media', 'fucker');
+        $nameParts = explode('.', $filename);
+        $ext = array_pop($nameParts);
 
-        $x = Storage::append('public/media/' . 1 . $ext, file_get_contents($_FILES['file']['tmp_name']));
+        $filename = implode($nameParts);
 
-        dd($_FILES);
-        return;
+        $file = $request->file('file');
+        $chunksDir = Storage::disk('local')->path("chunks");
+        $path = $chunksDir . "/{$filename}";
 
+        if ($isDone == true) {
+            $filename = uniqid();
+            File::move($path, storage_path("/app/public/media/{$filename}.{$ext}"));
 
-       
+            $m = new Media();
+            $m->type = $type;
+            if (!empty($postId)) $m->post_id = $postId;
+            else $m->post_id = -1;
+            $m->path = "media/{$filename}.{$ext}";
+            $m->save();
 
-        $fileId = uniqid();
+            echo json_encode([
+                'path' => $m->path,
+                'id'   => $m->id,
+            ]);
+            exit;
+        } else {
+            if (!file_exists($chunksDir)) {
+                mkdir($chunksDir, 777);
+            }
 
-        echo $fileId;
-        exit;
-    }
+            File::append($path, $file->get());
+        }
 
-    public function uploadChunk(Request $request)
-    {
-        #$postId = $_GET['id'];
-        #$fileId = $_GET['patch'];
-
-        $totalSize = $request->header('upload-length');
-        $filename = $request->header('upload-name');
-        $offset = $request->header('upload-offset');
-
-        $ext = explode('.', $filename);
-        $ext = '.' . array_pop($ext);
-
-        Storage::append('public/media/' . 1 . $ext, $input);
-
-        return response()->json([
-            'status' => 200,
-            'offset' => $offset,
-            'totalSize' => $totalSize,
+        echo json_encode([
+            'filename' => $filename,
+            'isDone'   => $isDone,
         ]);
+        exit;
     }
 }

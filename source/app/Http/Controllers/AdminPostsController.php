@@ -42,7 +42,7 @@ class AdminPostsController extends Controller
         $posts = $posts->orderBy('id', 'desc')->simplePaginate(10);
 
         return view('admin.posts.index', [
-            'posts' => $posts,
+            'posts'   => $posts,
             'filters' => $filters,
         ]);
     }
@@ -65,7 +65,9 @@ class AdminPostsController extends Controller
 
     public function delete($id)
     {
-        Post::find($id)->delete();
+        $post = Post::find($id);
+
+        if (!empty($post)) $post->delete();
 
         return redirect()->back();
     }
@@ -74,8 +76,7 @@ class AdminPostsController extends Controller
     {
         $title = $request->post('title');
         $body = $request->post('body');
-
-
+        $attachmentIds = $request->post('attachmentIds');
 
         $p = new Post();
         $p->title = $title;
@@ -84,30 +85,10 @@ class AdminPostsController extends Controller
         $p->date_created = date('Y-m-d H:i:s');
         $p->save();
 
-        $mediaTypes = [
-            Media::TYPE_VIDEO => 'videos',
-            Media::TYPE_IMAGE => 'images'
-        ];
-
-        $id = $p->id;
-
-        foreach ($mediaTypes as $type => $name) {
-            if ($request->hasFile($name)) {
-                $files = $request->file($name);
-
-                foreach ($files as $file) {
-                    try {
-                        $m = new Media();
-                        $m->path = $file->store('public/media');
-                        $m->type = $type;
-                        $m->post_id = $id;
-                        $m->save();
-                    } catch (\Exception $e) {
-                    }
-                }
-            }
+        if (!empty($attachmentIds)) {
+            Media::whereIn('id', $attachmentIds)
+                ->update(['post_id' => $p->id]);
         }
-
 
         return redirect()->route('admin.posts.edit', ['id' => $p->id]);
     }
@@ -128,28 +109,6 @@ class AdminPostsController extends Controller
         }
 
         $p->save();
-
-        $mediaTypes = [
-            Media::TYPE_VIDEO => 'videos',
-            Media::TYPE_IMAGE => 'images'
-        ];
-
-        foreach ($mediaTypes as $type => $name) {
-            if ($request->hasFile($name)) {
-                $files = $request->file($name);
-
-                foreach ($files as $file) {
-                    try {
-                        $m = new Media();
-                        $m->path = $file->store('public/media');
-                        $m->type = $type;
-                        $m->post_id = $id;
-                        $m->save();
-                    } catch (\Exception $e) {
-                    }
-                }
-            }
-        }
 
         return redirect()->route('admin.posts.edit', ['id' => $p->id]);
     }

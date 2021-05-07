@@ -2,7 +2,7 @@
 
 @section('styles')
     <!-- add to document <head> -->
-    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet" />
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet"/>
 @endsection
 
 @section('scripts')
@@ -31,12 +31,12 @@
         @php
             $route = isset($post->id) ? route('admin.posts.update', ['id' => $post->id]) : route('admin.posts.store');
             $media = $post->media;
-            
+
             $mediaMap = ['video' => [], 'image' => []];
             foreach ($media as $m) {
                 $mediaMap[$m->type][] = $m;
             }
-            
+
         @endphp
         <form action="{{ $route }}" method="post" enctype="multipart/form-data">
             @csrf
@@ -44,36 +44,33 @@
             <div class="mb-3">
                 <label for="title" class="form-label text-primary"><strong>Վերնագիր</strong></label>
                 <input type="text" required class="form-control" name="title" id="title" value="{{ $post->title }}"
-                    placeholder="...">
+                       placeholder="">
             </div>
             <div class="mb-3" data-init="afterCkEditor" style="opacity: 0">
                 <label for="editor" class="form-label text-primary"><strong>Բովանդակություն</strong></label>
-                <textarea required class="form-control" id="editor" name="body" rows="3"
-                    placeholder="...">{{ $post->body }}</textarea>
+                <textarea class="form-control" id="editor" name="body" rows="3"
+                          placeholder="">{{ $post->body }}</textarea>
             </div>
 
             <div class="mb-3">
-                <label for="images" class="form-label text-primary"><strong>Կցել նկար</strong></label>
-                <input class="form-control" type="file" name="images[]" id="images" accept="image/*" multiple>
+                <label for="attachments" class="form-label text-primary"><strong>Կցել նկար կամ հոլովակ</strong></label>
+                <input class="form-control" type="file" name="attachments[]" id="attachments" accept="image/*|video/*"/>
             </div>
 
-            <div class="mb-3">
-                <label for="videos" class="form-label text-primary"><strong>Կցել video</strong></label>
-                <input class="form-control" type="file" name="videos[]" id="videos" accept="video/*">
+            <div class="progress" style="display:none;" id="progress">
+                <div class="progress-bar" id="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
 
-            <input type="file" id="f" />
-
-            <div class="media-list pt-5">
+            <div class="media-list pt-5 images">
                 @foreach ($mediaMap['image'] as $item)
                     <div class="media-item">
-                        <img src="{{ Storage::url($item->path) }}" class="img-fluid" />
+                        <img src="{{ Storage::url($item->path) }}" class="img-fluid"/>
                         <a href="{{ route('admin.media.delete', ['id' => $item->id]) }}"><i class="fa fa-times"></i></a>
                     </div>
                 @endforeach
             </div>
 
-            <div class="media-list pt-3">
+            <div class="media-list pt-3 videos">
                 @foreach ($mediaMap['video'] as $item)
                     <div class="media-item">
                         <video controls src="{{ Storage::url($item->path) }}" class="img-fluid"></video>

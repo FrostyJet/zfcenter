@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\AdminPostsController; 
-use App\Http\Controllers\AdminMediaController; 
+use App\Http\Controllers\AdminPostsController;
+use App\Http\Controllers\AdminMediaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +18,7 @@ use App\Http\Controllers\AdminMediaController;
 
 # Posts
 # --------------------------------------------------------------------------
+Route::get('/', [AdminPostsController::class, 'index']);
 Route::get('/posts', [AdminPostsController::class, 'index'])->name('admin.posts.index');
 Route::get('/posts/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');
 Route::post('/posts/create', [AdminPostsController::class, 'store'])->name('admin.posts.store');
@@ -28,8 +29,6 @@ Route::get('/posts/delete/{id}', [AdminPostsController::class, 'delete'])->name(
 
 # Media
 # --------------------------------------------------------------------------
-Route::post('/media', [AdminMediaController::class, 'uploadStart'])->name('admin.media.uploadStart');
-Route::post('/media/patch/{id}', [AdminMediaController::class, 'uploadChunk'])->name('admin.media.uploadChunk');
-
+Route::post('/media/upload', [AdminMediaController::class, 'upload'])->name('admin.media.upload');
 Route::get('/media/delete/{id}', [AdminMediaController::class, 'delete'])->name('admin.media.delete');
 # --------------------------------------------------------------------------

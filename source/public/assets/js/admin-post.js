@@ -1,16 +1,23 @@
-(function() {
+function initUploader() {
+    var attachments = document.getElementById('attachments');
+    var progress = document.getElementById('progress');
+    var progressBar = document.getElementById('progressBar');
+    var postId = document.querySelector('#postId');
 
-    var f = document.getElementById('f');
+    if (postId) postId = postId.value;
+    if (!attachments) return;
 
-    if (f.files.length)
-        processFile();
-
-    f.addEventListener('change', processFile, false);
-
+    attachments.addEventListener('change', processFile, false);
 
     function processFile(e) {
-        var file = f.files[0];
+        progress.style.display = 'flex';
+        attachments.setAttribute('disabled', true);
+
+        var file = attachments.files[0];
+        if (!file) return;
+
         var size = file.size;
+        var type = file.type.split('/')[0];
         var sliceSize = 500000;
         var start = 0;
 
@@ -24,79 +31,119 @@
             }
 
             var s = slice(file, start, end);
-
-            send(s, start, end).onload = function() {
-                if (end < size) {
-                    start += sliceSize;
-                    setTimeout(loop, 1);
-                }
+            var payload = {
+                slice: s,
+                start: start,
+                end: end,
+                isDone: false,
+                filename: file.name,
             };
 
+            send(Object.assign({}, payload, {
+                onload: function () {
+                    if (end < size) {
+                        start += sliceSize;
 
+                        var percent = ((100 * end) / size).toFixed(1);
+                        progressBar.style.width = percent + '%';
+
+                        setTimeout(loop, 1);
+                    } else {
+                        finish({filename: file.name, type: type})
+                    }
+                }
+            }));
         }
     }
 
+    function finish(payload) {
+        attachments.removeAttribute('disabled');
+        attachments.value = null;
 
-    function send(piece, start, end) {
+        payload.postId = postId;
+        payload.isDone = true;
+        payload.onload = function (response) {
+            response = JSON.parse(response);
+            progress.style.display = 'none';
+            progressBar.style.width = '0%';
+
+
+            var html = '', container = null;
+
+            html += '<div class="media-item">';
+            if (payload.type == 'video') {
+                container = document.querySelector('.videos');
+                html += '<video controls src="/storage/' + response.path + '" class="img-fluid"></video>';
+            } else {
+                container = document.querySelector('.images');
+                html += '<img src="/storage/' + response.path + '" class="img-fluid"/>';
+            }
+
+            html += '<a href="/zf-center/media/delete/' + response.id + '"><i class="fa fa-times"></i></a>';
+            html += '<input type="hidden" name="attachmentIds[]" value="' + response.id + '">';
+            html += '</div>';
+
+            container.innerHTML += html;
+        };
+
+        send(payload);
+    }
+
+    function send(params) {
         var formdata = new FormData();
         var xhr = new XMLHttpRequest();
 
-        xhr.open('POST', '/zf-admin/media', true);
+        xhr.open('POST', '/zf-admin/media/upload', true);
 
-        formdata.append('start', start);
-        formdata.append('end', end);
-        formdata.append('file', piece);
+        formdata.append('start', params.start);
+        formdata.append('end', params.end);
+        formdata.append('file', params.slice);
+        formdata.append('isDone', params.isDone);
+        formdata.append('filename', params.filename);
+        formdata.append('postId', params.postId);
+        formdata.append('type', params.type);
 
         xhr.send(formdata);
 
-        return xhr;
+        xhr.onload = function () {
+            params.onload(xhr.responseText)
+        }
     }
-
-    /**
-     * Formalize file.slice
-     */
 
     function slice(file, start, end) {
         var slice = file.mozSlice ? file.mozSlice :
             file.webkitSlice ? file.webkitSlice :
-            file.slice ? file.slice : noop;
+                file.slice ? file.slice : 'error';
+
+        if (slice == 'error') {
+            alert("Can not upload files using this device + browser!");
+            return window.location.reload();
+        }
 
         return slice.bind(file)(start, end);
     }
+}
 
-    function noop() {
+function initEditor() {
+    var editor = document.querySelector('#editor');
+    if (!editor) return;
 
-    }
+    var options = {
+        toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+    };
 
-})();
+    ClassicEditor
+        .create(editor, options)
+        .catch(function (error) {
+            console.error(error);
+        });
 
-function initUploader() {
-    var postId = document.querySelector('#postId').value;
-
-    FilePond.setOptions({
-        acceptedFileTypes: ['video/mp4', 'video/x-m4v', 'video/*'],
-        chunkUploads: true,
-        chunkForce: true,
-        maxFiles: 3,
-        maxChunkSize: 500000,
-        server: {
-            process: {
-                url: '/zf-admin/media?id=' + postId,
-            },
-            patch: {
-                //url: '/zf-admin/media/patch/?id=' + postId + '&patch=',
-                url: '/zf-admin/media/patch/',
-                method: 'POST',
-            }
-        },
-    });
-
-    var inputElement = document.querySelector('#videos');
-    var pond = FilePond.create(inputElement);
+    document.querySelector('[data-init="afterCkEditor"]').style.opacity = 1;
 }
 
 function init() {
-    //initUploader();
+    initUploader();
+    initEditor();
 }
 
 init();

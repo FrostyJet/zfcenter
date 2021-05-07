@@ -42,7 +42,12 @@
     border: 1px solid #212529;
     border-radius: 4px;
     position: relative;
-    padding: 5px;
+}
+
+.media-list .media-item img {
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    background: #212529;
 }
 
 .media-list .media-item a {
