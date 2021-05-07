@@ -6,7 +6,7 @@
         'index.remontAkpp'    => ['title' => 'РЕМОНТ АКПП', 'url' => route('index.remontAkpp')],
         'index.prices'        => ['title' => 'ЦЕНЫ', 'url' => route('index.prices')],
         'index.zapchastiAkpp' => ['title' => 'ЗАПЧАСТИ АКПП', 'url' => route('index.zapchastiAkpp')],
-        'index.#5'            => ['title' => 'НАШИ РАБОТЫ', 'url' => '/'],
+        'index.works'            => ['title' => 'НАШИ РАБОТЫ', 'url' => route('index.works')],
         'index.contacts'      => ['title' => 'КОНТАКТЫ', 'url' => route('index.contacts')]
     ]
     ?>

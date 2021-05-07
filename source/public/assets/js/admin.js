@@ -1,6 +1,5 @@
 function initEditor() {
     var editor = document.querySelector('#editor');
-    console.log(editor);
     if (!editor) return;
 
     var options = {

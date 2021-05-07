@@ -28,5 +28,8 @@ Route::get('/posts/delete/{id}', [AdminPostsController::class, 'delete'])->name(
 
 # Media
 # --------------------------------------------------------------------------
+Route::post('/media', [AdminMediaController::class, 'uploadStart'])->name('admin.media.uploadStart');
+Route::post('/media/patch/{id}', [AdminMediaController::class, 'uploadChunk'])->name('admin.media.uploadChunk');
+
 Route::get('/media/delete/{id}', [AdminMediaController::class, 'delete'])->name('admin.media.delete');
 # --------------------------------------------------------------------------

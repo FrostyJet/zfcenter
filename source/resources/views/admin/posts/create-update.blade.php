@@ -1,11 +1,26 @@
 @extends('@layouts.admin')
 
+@section('styles')
+    <!-- add to document <head> -->
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet" />
+@endsection
+
+@section('scripts')
+    <!-- add before </body> -->
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+
+    <script type="text/javascript" src="{{ URL::asset('assets/lib/ckeditor/ckeditor.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/js/admin-post.js') }}"></script>
+@endsection
+
 @section('content')
     <div class="container-fluid pb-5 pt-3">
-        <a href="{{ route('admin.posts.index') }}" class="btn btn-sm btn-success mb-4"><i class="fa fa-chevron-left mr-2"></i> Վերադառնալ ցանկ</a>
+        <a href="{{ route('admin.posts.index') }}" class="btn btn-sm btn-success mb-4"><i
+                class="fa fa-chevron-left mr-2"></i> Վերադառնալ ցանկ</a>
 
         @isset($post->id)
             <h1>Հրապարակում #{{ $post->id }}</h1>
+            <input type="hidden" value="{{$post->id}}" id="postId">
         @endisset
 
         @empty($post->id)
@@ -44,8 +59,10 @@
 
             <div class="mb-3">
                 <label for="videos" class="form-label text-primary"><strong>Կցել video</strong></label>
-                <input class="form-control" type="file" name="videos[]" id="videos" accept="video/*" multiple>
+                <input class="form-control" type="file" name="videos[]" id="videos" accept="video/*">
             </div>
+
+            <input type="file" id="f" />
 
             <div class="media-list pt-5">
                 @foreach ($mediaMap['image'] as $item)
@@ -59,7 +76,7 @@
             <div class="media-list pt-3">
                 @foreach ($mediaMap['video'] as $item)
                     <div class="media-item">
-                        <video controls src="{{ Storage::url($item->path) }}" class="img-fluid" ></video>
+                        <video controls src="{{ Storage::url($item->path) }}" class="img-fluid"></video>
                         <a href="{{ route('admin.media.delete', ['id' => $item->id]) }}"><i class="fa fa-times"></i></a>
                     </div>
                 @endforeach
@@ -70,8 +87,4 @@
             </div>
         </form>
     </div>
-@endsection
-
-@section('scripts')
-    <script type="text/javascript" src="{{ URL::asset('assets/lib/ckeditor/ckeditor.js') }}"></script>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use \App\Models\Post;
 
 class IndexController extends Controller
 {
@@ -35,12 +36,12 @@ class IndexController extends Controller
         $series = \App\Models\Defines::getSeries()[$brand] ?? NULL;
 
         $data = [
-            'brand'=> $brand,
-            'brands'=> $brands,
+            'brand' => $brand,
+            'brands' => $brands,
         ];
 
-        if(!isset($series)) {
-            abort(404);
+        if (!isset($series)) {
+            return abort(404);
         }
 
         $data['series'] = $series;
@@ -63,5 +64,26 @@ class IndexController extends Controller
     public function renderContacts()
     {
         return view('contacts');
+    }
+
+    public function renderWorks()
+    {
+        $posts = Post::with('media')->orderBy('id', 'desc')->simplePaginate(10);
+        return view('works', [
+            'posts' => $posts
+        ]);
+    }
+
+    public function renderWorkDetails($id, $slug)
+    {
+        $post = Post::findOrFail($id);
+
+        if ($post->slug != $slug) {
+            return abort(404);
+        }
+
+        return view('workDetails', [
+            'post' => $post
+        ]);
     }
 }

@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/vnd.microsoft.icon">
     <title>ZfCenter.am</title>
 
+    @yield('styles')
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
@@ -27,5 +29,6 @@
 
 @include('@components.footer')
 </body>
+@yield('scripts')
 <script type="text/javascript" src="{{ URL::asset('assets/js/app.js') }}"></script>
 </html>

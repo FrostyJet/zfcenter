@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\IndexController; 
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +20,8 @@ Route::get('/about', [IndexController::class, 'renderAbout'])->name('index.about
 Route::get('/prices', [IndexController::class, 'renderPrices'])->name('index.prices');
 Route::get('/zapchasti-akpp', [IndexController::class, 'renderZapchastiAkpp'])->name('index.zapchastiAkpp');
 Route::get('/kontakty', [IndexController::class, 'renderContacts'])->name('index.contacts');
+Route::get('/works', [IndexController::class, 'renderWorks'])->name('index.works');
+Route::get('/works/{id}-{slug}', [IndexController::class, 'renderWorkDetails'])->name('index.works.details');
 
 Route::get('/remont-akpp', [IndexController::class, 'renderRemontAkpp'])->name('index.remontAkpp');
 Route::get('/remont-akpp-{brand}', [IndexController::class, 'renderRemontBrand'])->name('index.remontBrand');
