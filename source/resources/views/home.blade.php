@@ -20,14 +20,14 @@
         <?php $brands = \App\Models\Defines::getBrands(); ?>
         <section class="text-center container">
             <div class="row remont-akpp">
-                @foreach($brands as $b)
-                    <div class="col-6 col-lg-4 card-item">
+                @foreach($brands as $key => $b)
+                    <a href="/remont-akpp-{{$key}}" class="col-6 col-lg-4 card-item no-decoration text-dark">
                         <img class="bd-placeholder-img" width="140" height="140"
                              src="{{$b['image']}}" alt="">
 
                         <h2 class="text-truncate">{{$b['subtitle']}}</h2>
                         <p>{{$b['title']}}</p>
-                    </div><!-- /.col-lg-4 -->
+                    </a><!-- /.col-lg-4 -->
                 @endforeach
             </div>
         </section>
@@ -115,12 +115,14 @@
                             <label for="comment" class="form-label">Ваш комментарий</label>
                             <input type="text" id="comment" class="form-control form-control-lg">
                         </div>
-                        <button type="submit" class="btn btn-lg btn-primary">Отправить заявку&nbsp; <i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="btn btn-lg btn-primary">Отправить заявку&nbsp; <i
+                                class="fas fa-paper-plane"></i></button>
                     </fieldset>
                 </form>
 
                 <div class="col-6 justify-content-center align-items-center d-flex">
-                    <img class="img-fluid" style="max-width: 430px;" src="{{URL::asset('img/i/undraw_personal_file.svg')}}">
+                    <img class="img-fluid" style="max-width: 430px;"
+                         src="{{URL::asset('img/i/undraw_personal_file.svg')}}">
                 </div>
             </div>
         </div>

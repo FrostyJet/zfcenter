@@ -23,3 +23,7 @@ Route::get('/kontakty', [IndexController::class, 'renderContacts'])->name('index
 
 Route::get('/remont-akpp', [IndexController::class, 'renderRemontAkpp'])->name('index.remontAkpp');
 Route::get('/remont-akpp-{brand}', [IndexController::class, 'renderRemontBrand'])->name('index.remontBrand');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
