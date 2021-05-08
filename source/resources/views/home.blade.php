@@ -7,7 +7,8 @@
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1>Записаться на БЕСПЛАТНУЮ диагностику АКПП</h1>
                     <p>
-                        <a href="#" class="btn fw-bold btn-lg btn-warning my-2 text-uppercase">записаться</a>
+                        <a href="{{route('index.contacts') }}#newOrder"
+                           class="btn fw-bold btn-lg btn-warning my-2 text-uppercase">записаться</a>
                     </p>
                 </div>
             </div>
@@ -116,7 +117,7 @@
 
                 <div class="col-6 justify-content-center align-items-center d-flex">
                     <img class="img-fluid" style="max-width: 430px;"
-                        src="{{ URL::asset('img/i/undraw_personal_file.svg') }}">
+                         src="{{ URL::asset('img/i/undraw_personal_file.svg') }}">
                 </div>
             </div>
         </div>

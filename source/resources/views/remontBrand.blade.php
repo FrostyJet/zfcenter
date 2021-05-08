@@ -18,13 +18,13 @@
                         <div class="row py-3">
                             @foreach($serie['models'] as $modelKey => $model)
                                 <div class="col col-md-4 mb-3">
-                                    <div class="card h-100">
+                                    <a class="card no-decoration text-dark h-100" href="{{ route('index.remontBrandDetails', ['brand' => $modelKey]) }}">
                                         <img src="/img/models/{{$brand}}/{{$serieKey}}/{{$modelKey}}.jpg"
                                              class="card-img-top">
                                         <div class="card-body d-flex align-items-end">
                                             <h5 class="card-title">{{$model}}</h5>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             @endforeach
                         </div>

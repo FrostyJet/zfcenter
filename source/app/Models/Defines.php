@@ -356,31 +356,31 @@ class Defines
     {
         $series = [
             'mercedes'   => [
-                'a_class'     => [
+                'a_class'              => [
                     'title'  => 'A-CLASS',
                     'models' => [
                         'mercedes_A_class' => 'MERCEDES A-CLASS W169'
                     ]
                 ],
-                'b_class'     => [
+                'b_class'              => [
                     'title'  => 'B-CLASS',
                     'models' => [
                         'mercedes_b_class' => 'MERCEDES B-CLASS'
                     ]
                 ],
-                'c_class'     => [
+                'c_class'              => [
                     'title'  => 'C-CLASS',
                     'models' => [
                         'mercedes_w203' => 'MERCEDES W203'
                     ]
                 ],
-                'clc_class'     => [
+                'clc_class'            => [
                     'title'  => 'CLC-CLASS',
                     'models' => [
                         'mercedes_clc_class' => 'MERCEDES CLC-CLASS'
                     ]
                 ],
-                'e_class'     => [
+                'e_class'              => [
                     'title'  => 'E-CLASS',
                     'models' => [
                         'mercedes_w210' => 'MERCEDES W210',
@@ -388,7 +388,7 @@ class Defines
                         'mercedes_w212' => 'MERCEDES W212',
                     ]
                 ],
-                's_class'     => [
+                's_class'              => [
                     'title'  => 'S-CLASS',
                     'models' => [
                         'mercedes_w220' => 'MERCEDES W220',
@@ -396,13 +396,13 @@ class Defines
                         'mercedes_w222' => 'MERCEDES W222',
                     ]
                 ],
-                'glk_class'     => [
+                'glk_class'            => [
                     'title'  => 'GLK-CLASS',
                     'models' => [
                         'mercedes_glk_class' => 'MERCEDES GLK-CLASS',
                     ]
                 ],
-                'ml_class'     => [
+                'ml_class'             => [
                     'title'  => 'ML-CLASS',
                     'models' => [
                         'mercedes_w163' => 'MERCEDES W163',
@@ -410,51 +410,51 @@ class Defines
                         'mercedes_w166' => 'MERCEDES W166',
                     ]
                 ],
-                'gl_class'     => [
+                'gl_class'             => [
                     'title'  => 'GL-CLASS',
                     'models' => [
                         'mercedes_gl_class_x164' => 'MERCEDES GL-CLASS X164',
                         'mercedes_gl_class_x166' => 'MERCEDES GL-CLASS X166',
                     ]
                 ],
-                'r_class'     => [
+                'r_class'              => [
                     'title'  => 'R-CLASS',
                     'models' => [
                         'mercedes_r_class' => 'MERCEDES R-CLASS',
                     ]
                 ],
-                'gl_class_gelentwagen'     => [
+                'gl_class_gelentwagen' => [
                     'title'  => 'G-CLASS GELENTWAGEN',
                     'models' => [
                         'mercedes_g_class' => 'MERCEDES G-CLASS',
                     ]
                 ],
-                'cl_class'     => [
+                'cl_class'             => [
                     'title'  => 'CL-CLASS',
                     'models' => [
                         'mercedes_w215' => 'MERCEDES W215',
                         'mercedes_w216' => 'MERCEDES W216',
                     ]
                 ],
-                'sl_class'     => [
+                'sl_class'             => [
                     'title'  => 'SL-CLASS',
                     'models' => [
                         'mercedes_sl_class' => 'MERCEDES SL-CLASS',
                     ]
                 ],
-                'slk_class'     => [
+                'slk_class'            => [
                     'title'  => 'SLK-CLASS',
                     'models' => [
                         'mercedes_slk_class' => 'MERCEDES SLK-CLASS',
                     ]
                 ],
-                'v_class'     => [
+                'v_class'              => [
                     'title'  => 'V-CLASS',
                     'models' => [
                         'mercedes_v_class' => 'MERCEDES V-CLASS',
                     ]
                 ],
-                'sprinter'     => [
+                'sprinter'             => [
                     'title'  => 'SPRINTER',
                     'models' => [
                         'mercedes_sprinter' => 'MERCEDES SPRINTER',
@@ -674,9 +674,9 @@ class Defines
                     'lincoln'      => 'Lincoln',
                     'maserati'     => 'Maserati',
                     'porsche'      => 'Porsche',
-                    'rr'  => 'Rolls Royce',
+                    'rr'           => 'Rolls Royce',
                     'seat'         => 'Seat',
-                    'vw'   => 'Volkswagen',
+                    'vw'           => 'Volkswagen',
                 ]
             ],
         ];

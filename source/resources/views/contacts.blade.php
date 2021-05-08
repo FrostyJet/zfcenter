@@ -48,7 +48,7 @@
                 </p>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <a href="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Записаться </a> на
+                    <a href="#newOrder" data-bs-toggle="modal" data-bs-target="#newOrder">Записаться </a> на
                     бесплатную диагностику АКПП
                 </div>
             </div>
@@ -56,7 +56,7 @@
     </div>
 
 
-    <div class="modal" id="exampleModal" tabindex="-1">
+    <div class="modal" id="newOrder" tabindex="-1">
         <div class="modal-dialog">
             <form class="modal-content" method="POST" action="{{ route('index.contacts.store') }}">
                 <div class="modal-header">
@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">закрыть</button>
                     <button type="submit" class="btn btn-success">Записаться на диагностику</button>
                 </div>
             </form>

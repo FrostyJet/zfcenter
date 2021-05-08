@@ -48,3 +48,5 @@ Route::get('/orders/delete/{id}', [AdminOrdersController::class, 'delete'])->nam
 Route::post('/media/upload', [AdminMediaController::class, 'upload'])->name('admin.media.upload');
 Route::get('/media/delete/{id}', [AdminMediaController::class, 'delete'])->name('admin.media.delete');
 # --------------------------------------------------------------------------
+
+

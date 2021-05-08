@@ -30,4 +30,10 @@ Route::get('/remont-akpp', [IndexController::class, 'renderRemontAkpp'])->name('
 Route::get('/remont-akpp-{brand}', [IndexController::class, 'renderRemontBrand'])->name('index.remontBrand');
 Route::get('/remont-akpp/{brand}', [IndexController::class, 'renderRemontBrandDetails'])->name('index.remontBrandDetails');
 
-Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset'    => false, // Password Reset Routes...
+    'verify'   => false, // Email Verification Routes...
+]);

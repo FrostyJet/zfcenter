@@ -67,7 +67,7 @@
                             <span class="d-none d-sm-inline ms-2">{{ Auth::user()->name }}</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                            <li><a class="dropdown-item" href="#">Դուրս գալ</a></li>
+                            <li><a class="dropdown-item" href="{{route('logout')}}">Դուրս գալ</a></li>
                         </ul>
                     </div>
                 </div>

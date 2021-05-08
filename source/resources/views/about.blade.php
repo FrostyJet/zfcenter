@@ -40,7 +40,7 @@
     </div>
 
     <p class="mb-4">
-        <a href="/done-works" class="text-center">Примеры выполненных работ по ремонту АКПП </a>
+        <a href="{{route('index.works')}}" class="text-center">Примеры выполненных работ по ремонту АКПП </a>
     </p>
     <p class="mb-4"><a href="tel: {{ \App\Models\Defines::getCompanyPhone() }}" class="btn btn-primary text-center">Телефон для связи: {{ \App\Models\Defines::getCompanyPhone() }} &nbsp;<i class="fa fa-phone"></i></a></p>
     </div>
