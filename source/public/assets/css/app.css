@@ -16,7 +16,7 @@ nav .nav-item .nav-link {
     background: linear-gradient(to bottom, rgba(32, 22, 0, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-.hero > .poster {
+.hero>.poster {
     z-index: -1;
     height: auto;
     object-fit: contain;
@@ -29,7 +29,7 @@ nav .nav-item .nav-link {
     right: 0;
 }
 
-.hero > section {
+.hero>section {
     z-index: 1;
     color: #fff
 }
@@ -50,7 +50,7 @@ nav .nav-item .nav-link {
     color: #6a6a6a;
 }
 
-.intro .contact-btn > span {
+.intro .contact-btn>span {
     display: block;
     background: #4caf50;
     color: #fff;
@@ -139,21 +139,25 @@ nav .nav-item .nav-link {
     flex-wrap: wrap;
 }
 
-.work-details .images-list > a {
+.work-details .images-list>a {
     width: auto;
     max-width: 200px;
     display: flex;
     align-items: center;
     margin: 0 20px 20px 0;
-    border: 1px solid #2e2e2e;
     border-radius: 0.25rem;
     background: #f8f9fa;
 }
 
 .work-details .images-list img {
-    aspect-ratio: 16/9;
+    aspect-ratio: 195/146;
     object-fit: contain;
     background: #2e2e2e;
+}
+
+.pagination svg {
+    height: 20px;
+    width: 20px;
 }
 
 @media all and (min-width: 992px) {

@@ -68,7 +68,7 @@ class IndexController extends Controller
 
     public function renderWorks()
     {
-        $posts = Post::with('media')->orderBy('id', 'desc')->simplePaginate(10);
+        $posts = Post::with('media')->orderBy('id', 'desc')->paginate(8);
         return view('works', [
             'posts' => $posts
         ]);
