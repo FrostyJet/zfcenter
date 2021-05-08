@@ -7,10 +7,12 @@
                 <form action="{{ route('admin.posts.index') }}" class="col" method="GET">
                     <div class="row">
                         <div class="col col-lg-2">
-                            <input type="text" class="form-control" value="{{@$filters['id']}}" name="id" placeholder="ID">
+                            <input type="text" class="form-control" value="{{ @$filters['id'] }}" name="id"
+                                placeholder="ID">
                         </div>
                         <div class="col col-lg-4">
-                            <input type="text" class="form-control" value="{{@$filters['title']}}" name="title" placeholder="ըստ վերնագրի">
+                            <input type="text" class="form-control" value="{{ @$filters['title'] }}" name="title"
+                                placeholder="ըստ վերնագրի">
                         </div>
                         <div class="col col-lg-2">
                             <button class="btn btn-primary"><i class="fa fa-search mr-2"></i> Որոնել</button>
@@ -34,6 +36,12 @@
                 </tr>
             </thead>
             <tbody>
+                @empty($posts)
+                    <tr>
+                        <td colspan="4" class="p-3">Տվյալները բացակայում են ․․․․</td>
+                    </tr>
+                @endempty
+
                 @foreach ($posts as $post)
                     <tr>
                         <td>{{ $post->id }}</td>
@@ -50,7 +58,7 @@
             </tbody>
         </table>
 
-        <div class="pagination d-flex justify-content-center mt-5">
+        <div class="pagination">
             {{ $posts->links() }}
         </div>
     </div>

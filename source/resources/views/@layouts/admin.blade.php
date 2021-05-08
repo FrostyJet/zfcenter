@@ -45,10 +45,17 @@
                                 </span>
                             </a>
                         </li>
-                        <li class="nav-item ps-3 mb-2 py-2">
-                            <a href="#" class="nav-link  align-middle px-0 text-white">
+                        <li class="nav-item ps-3 mb-2 py-2 {{ stripos(Request::url(), '/orders') !== false ? 'active' : '' }}">
+                            <a href="{{ route('admin.orders.index') }}" class="nav-link align-middle px-0 text-white">
                                 <i class="side-icon fas fa-clipboard-list"></i><span
                                     class="ms-2 d-none d-sm-inline">Հայտ / Գրանցումներ</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ps-3 mb-2 py-2 {{ stripos(Request::url(), '/cars') !== false ? 'active' : '' }}">
+                            <a href="{{ route('admin.cars.index') }}" class="nav-link align-middle px-0 text-white">
+                                <i class="side-icon fas fa-car"></i><span
+                                    class="ms-2 d-none d-sm-inline">Բրենդներ</span>
                             </a>
                         </li>
                     </ul>

@@ -118,7 +118,8 @@ nav .nav-item .nav-link {
 
 .remont-akpp .card-item {
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: 0.25rem;
+    overflow: hidden;
     background-color: transparent;
 }
 
@@ -126,12 +127,17 @@ nav .nav-item .nav-link {
     border-color: #2d3748;
     transition: 150ms ease;
     background-color: #f8f9fa;
+    border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .works .card-img-top {
     aspect-ratio: 4/3;
     object-fit: cover;
     background: #41464b;
+}
+
+.work-details {
+    min-height: calc(100vh - 295px);
 }
 
 .work-details .images-list {
@@ -147,6 +153,28 @@ nav .nav-item .nav-link {
     margin: 0 20px 20px 0;
     border-radius: 0.25rem;
     background: #f8f9fa;
+    overflow: hidden;
+    position: relative;
+}
+
+.work-details .images-list>a button {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background: #000000a6;
+    border-radius: 32rem;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    line-height: 1;
+    border: 1px solid transparent;
+    transition: 150ms;
+}
+
+.work-details .images-list>a:hover button {
+    transform: translate(-50%, -50%);
+    top: 20%;
 }
 
 .work-details .images-list img {
@@ -155,9 +183,49 @@ nav .nav-item .nav-link {
     background: #2e2e2e;
 }
 
+.work-details .videos-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.work-details .videos-list>div>a {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.work-details .videos-list button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffc107;
+    border-radius: 32rem;
+    padding: 15px;
+    text-align: center;
+    line-height: 1;
+    border: 1px solid #0000004a;
+}
+
+.work-details .videos-list>div:hover button {
+    background: #000000;
+    color: #ffc107;
+    transition: 150ms;
+}
+
+.work-details .videos-list video {
+    width: 100%;
+}
+
 .pagination svg {
     height: 20px;
     width: 20px;
+}
+
+.car-details .hero-block img {
+    max-height: 260px;
 }
 
 @media all and (min-width: 992px) {

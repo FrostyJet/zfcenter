@@ -1,14 +1,6 @@
 @extends('@layouts.admin')
 
-@section('styles')
-    <!-- add to document <head> -->
-    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet"/>
-@endsection
-
 @section('scripts')
-    <!-- add before </body> -->
-    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
-
     <script type="text/javascript" src="{{ URL::asset('assets/lib/ckeditor/ckeditor.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('assets/js/admin-post.js') }}"></script>
 @endsection

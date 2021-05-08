@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\OrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,10 @@ Route::get('/kontakty', [IndexController::class, 'renderContacts'])->name('index
 Route::get('/works', [IndexController::class, 'renderWorks'])->name('index.works');
 Route::get('/works/{id}-{slug}', [IndexController::class, 'renderWorkDetails'])->name('index.works.details');
 
+Route::post('/contacts/create', [OrdersController::class, 'store'])->name('index.contacts.store');
+
 Route::get('/remont-akpp', [IndexController::class, 'renderRemontAkpp'])->name('index.remontAkpp');
 Route::get('/remont-akpp-{brand}', [IndexController::class, 'renderRemontBrand'])->name('index.remontBrand');
+Route::get('/remont-akpp/{brand}', [IndexController::class, 'renderRemontBrandDetails'])->name('index.remontBrandDetails');
 
 Auth::routes();

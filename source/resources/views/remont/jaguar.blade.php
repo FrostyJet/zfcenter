@@ -22,13 +22,13 @@
 <div class="py-5">
     <h2 class="mb-3">РЕМОНТ И ОБСЛУЖИВАНИЕ АКПП Jaguar:</h2>
     <div>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/akpp-ZF6HP19">ZF6HP19</a>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/remont-akpp-ZF6HP26">ZF6HP26</a>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/remont-akpp-tf81sc">ZF6HP28</a>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/remont-akpp-tf81sc">ZF8HP45</a>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/remont-akpp-tf81sc">ZF8HP70</a>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/remont-akpp-tf81sc">Диагностика АКПП</a>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/remont-akpp-tf81sc">Ремонт гидроблока АКПП</a>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/remont-akpp-tf81sc">Ремонт гидротрансформатора АКПП</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">ZF6HP19</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">ZF6HP26</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">ZF6HP28</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">ZF8HP45</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">ZF8HP70</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">Диагностика АКПП</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">Ремонт гидроблока АКПП</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">Ремонт гидротрансформатора АКПП</a>
     </div>
 </div>

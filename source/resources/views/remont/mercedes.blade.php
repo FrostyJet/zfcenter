@@ -49,12 +49,12 @@
 <div class="py-5">
     <h2 class="mb-3">РЕМОНТ И ОБСЛУЖИВАНИЕ АКПП Mercedes:</h2>
     <div>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/akpp-5L40E">АКПП 722.6</a>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/remont-akpp-tf81sc">АКПП 722.8</a>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/remont-akpp-tf81sc">АКПП 722.9</a>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/remont-akpp-tf81sc">Диагностика АКПП</a>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/remont-akpp-tf81sc">Ремонт гидроблока АКПП</a>
-        <a class="btn btn-outline-primary mb-3 me-3" href="/remont-akpp-tf81sc">Ремонт гидротрансформатора АКПП</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">АКПП 722.6</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">АКПП 722.8</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">АКПП 722.9</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">Диагностика АКПП</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">Ремонт гидроблока АКПП</a>
+        <a class="btn btn-outline-primary mb-3 me-3" href="#">Ремонт гидротрансформатора АКПП</a>
     </div>
 </div>
 

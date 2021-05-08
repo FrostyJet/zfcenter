@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminPostsController;
 use App\Http\Controllers\AdminMediaController;
+use App\Http\Controllers\AdminOrdersController;
+use App\Http\Controllers\AdminCarsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +27,20 @@ Route::post('/posts/create', [AdminPostsController::class, 'store'])->name('admi
 Route::get('/posts/edit/{id}', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');
 Route::post('/posts/edit/{id}', [AdminPostsController::class, 'update'])->name('admin.posts.update');
 Route::get('/posts/delete/{id}', [AdminPostsController::class, 'delete'])->name('admin.posts.delete');
+# --------------------------------------------------------------------------
+
+# Cars
+# --------------------------------------------------------------------------
+Route::get('/', [AdminCarsController::class, 'index']);
+Route::get('/cars', [AdminCarsController::class, 'index'])->name('admin.cars.index');
+Route::get('/cars/edit/{id}', [AdminCarsController::class, 'edit'])->name('admin.cars.edit');
+Route::post('/cars/edit/{id}', [AdminCarsController::class, 'update'])->name('admin.cars.update');
+# --------------------------------------------------------------------------
+
+# Orders
+# --------------------------------------------------------------------------
+Route::get('/orders', [AdminOrdersController::class, 'index'])->name('admin.orders.index');
+Route::get('/orders/delete/{id}', [AdminOrdersController::class, 'delete'])->name('admin.orders.delete');
 # --------------------------------------------------------------------------
 
 # Media

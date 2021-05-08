@@ -27,12 +27,24 @@ foreach ($media as $m) {
             {!! $post->body !!}
         </div>
 
-        <div class="images-list">
+        <div class="media-list images-list">
             @foreach ($mediaMap['image'] as $item)
-            <a href="{{ Storage::url($item->path) }}" data-fancybox="gallery">
-                <img src="{{ Storage::url($item->path) }}" class="img-fluid" />
-            </a>
-        @endforeach
+                <a href="{{ Storage::url($item->path) }}" data-fancybox="gallery">
+                    <img src="{{ Storage::url($item->path) }}" class="img-fluid" />
+                    <button><i class="fa fa-search"></i></button>
+                </a>
+            @endforeach
+        </div>
+
+        <div class="media-list videos-list row">
+            @foreach ($mediaMap['video'] as $item)
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="{{ Storage::url($item->path) }}" data-fancybox="gallery">
+                        <video src="{{ Storage::url($item->path) }}"></video>
+                        <button><i class="fa fa-play"></i></button>
+                    </a>
+                </div>
+            @endforeach
         </div>
     </div>
 @endsection

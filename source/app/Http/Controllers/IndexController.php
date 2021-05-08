@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use \App\Models\Post;
+use \App\Models\Car;
 
 class IndexController extends Controller
 {
@@ -84,6 +85,15 @@ class IndexController extends Controller
 
         return view('workDetails', [
             'post' => $post
+        ]);
+    }
+    
+    public function renderRemontBrandDetails($brand)
+    {
+        $car = Car::where(['brand' => $brand])->first();
+
+        return view('remontBrandDetails', [
+            'car' => $car
         ]);
     }
 }
