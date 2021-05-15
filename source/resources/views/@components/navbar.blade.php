@@ -17,7 +17,7 @@
                 <img src="/img/i/logo_1.png" alt="">
             </a>
 
-            <a href="" class="contact-btn">
+            <a href="tel: {{ \App\Models\Defines::getCompanyPhone() }}" class="contact-btn">
                 <i class="fas fa-headset"></i> {{ \App\Models\Defines::getCompanyPhone() }}
                 <span>Обратный звонок</span>
             </a>

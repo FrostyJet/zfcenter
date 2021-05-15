@@ -1,3 +1,7 @@
+html {
+    font-size: 14px;
+}
+
 nav .nav-link:hover,
 nav .nav-item.active .nav-link {
     color: var(--bs-blue);
@@ -133,7 +137,8 @@ nav .nav-item .nav-link {
 .works .card-img-top {
     aspect-ratio: 4/3;
     object-fit: cover;
-    background: #41464b;
+    background: #bebebe;
+    border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .work-details {
@@ -226,6 +231,12 @@ nav .nav-item .nav-link {
 
 .car-details .hero-block img {
     max-height: 260px;
+}
+
+@media all and (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
 }
 
 @media all and (min-width: 992px) {

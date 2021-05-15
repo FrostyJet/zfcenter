@@ -33,7 +33,7 @@
                 @endforeach
             </ul>
 
-            <div class="remont-details py-5">
+            <div class="remont-details pt-5">
                 @include('remont.' . $brand)
             </div>
         @else
@@ -41,6 +41,4 @@
         @endif
 
     </div>
-    <div class="py-5"></div>
-
 @endsection

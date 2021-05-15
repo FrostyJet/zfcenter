@@ -1,7 +1,7 @@
 @extends('@layouts.app')
 
 @section('content')
-<div class="px-4 my-5 pb-3">
+<div class="px-md-4 my-5 pb-3">
   <h1 class="fw-bold text-center">О КОМПАНИИ</h1>
   <div class="col-lg-6 mx-auto">
     <p class="lead mb-4 text-center">
@@ -9,8 +9,8 @@
     </p>
   </div>
   <div class="text-center" style="max-height: 30vh;">
-    <div class="container-fluid px-5">
-      <img src="/img/i/about.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="1300" height="500" loading="lazy">
+    <div class="container-fluid px-md-5">
+      <img src="/img/i/about.png" class="img-fluid border rounded-3 shadow-lg mb-md-4" alt="Example image" width="1300" height="500" loading="lazy">
     </div>
   </div>
 
@@ -42,7 +42,10 @@
     <p class="mb-4">
         <a href="{{route('index.works')}}" class="text-center">Примеры выполненных работ по ремонту АКПП </a>
     </p>
-    <p class="mb-4"><a href="tel: {{ \App\Models\Defines::getCompanyPhone() }}" class="btn btn-primary text-center">Телефон для связи: {{ \App\Models\Defines::getCompanyPhone() }} &nbsp;<i class="fa fa-phone"></i></a></p>
+    <p class="mb-4">
+        <a href="tel: {{ \App\Models\Defines::getCompanyPhone() }}" class="btn btn-primary text-center">
+            <span class="d-none d-md-inline">Телефон для связи:</span> {{ \App\Models\Defines::getCompanyPhone() }} &nbsp;<i class="fa fa-phone"></i>
+        </a></p>
     </div>
 </div>
 @endsection

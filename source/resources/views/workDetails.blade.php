@@ -1,12 +1,12 @@
 @extends('@layouts.app')
 
 @section('styles')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="{{ URL::asset('assets/lib/fancybox/jquery.fancybox.min.css') }}?v=1" />
 @endsection
 
 @section('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="{{ URL::asset('assets/lib/jquery/jquery.min.js') }}?v=1"></script>
+    <script src="{{ URL::asset('assets/lib/fancybox/jquery.fancybox.min.js') }}?v=1"></script>
 @endsection
 
 @php

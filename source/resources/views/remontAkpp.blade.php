@@ -21,5 +21,5 @@
     </section>
 </div>
 
-<div class="py-5"></div>
+<div class="py-5 d-none d-lg-block"></div>
 @endsection

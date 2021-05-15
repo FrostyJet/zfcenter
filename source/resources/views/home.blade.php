@@ -19,11 +19,11 @@
 
     <div class="bg-light py-5">
         <?php $brands = \App\Models\Defines::getBrands(); ?>
-        <section class="text-center container">
+        <section class="text-center container px-3 px-md-0">
             <div class="row remont-akpp">
                 @foreach ($brands as $key => $b)
                     <a href="/remont-akpp-{{ $key }}" class="col-6 col-lg-4 card-item no-decoration text-dark">
-                        <img class="bd-placeholder-img" width="140" height="140" src="{{ $b['image'] }}" alt="">
+                        <img class="bd-placeholder-img img-fluid" width="140" height="140" src="{{ $b['image'] }}" alt="">
 
                         <h2 class="text-truncate">{{ $b['subtitle'] }}</h2>
                         <p>{{ $b['title'] }}</p>
@@ -115,7 +115,7 @@
                     </fieldset>
                 </form>
 
-                <div class="col-6 justify-content-center align-items-center d-flex">
+                <div class="col-6 d-none d-lg-flex justify-content-center align-items-center">
                     <img class="img-fluid" style="max-width: 430px;"
                          src="{{ URL::asset('img/i/undraw_personal_file.svg') }}">
                 </div>
