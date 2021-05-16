@@ -31,7 +31,6 @@ Route::get('/posts/delete/{id}', [AdminPostsController::class, 'delete'])->name(
 
 # Cars
 # --------------------------------------------------------------------------
-Route::get('/', [AdminCarsController::class, 'index']);
 Route::get('/cars', [AdminCarsController::class, 'index'])->name('admin.cars.index');
 Route::get('/cars/edit/{id}', [AdminCarsController::class, 'edit'])->name('admin.cars.edit');
 Route::post('/cars/edit/{id}', [AdminCarsController::class, 'update'])->name('admin.cars.update');

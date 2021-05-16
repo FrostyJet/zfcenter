@@ -2,6 +2,8 @@
 
 @section('content')
     <div class="container-fluid py-5">
+        <h1 class="mb-4">Բրենդներ</h1>
+
         <table class="table">
             <thead class="table-dark">
                 <tr>

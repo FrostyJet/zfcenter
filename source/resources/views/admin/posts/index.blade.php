@@ -2,6 +2,8 @@
 
 @section('content')
     <div class="container-fluid py-5">
+        <h1>Մեր աշխատանքները</h1>
+
         <div class="py-4">
             <div class="row">
                 <form action="{{ route('admin.posts.index') }}" class="col" method="GET">
